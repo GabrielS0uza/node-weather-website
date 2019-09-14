@@ -10,10 +10,12 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to get forecast, try another search.');
         } else {
             const dailySummary = body.daily.data[0].summary;
-            const temperature = body.currently.temperature;
+            const temperature = Math.round(body.currently.temperature);
+            const minTemperature = Math.round(body.daily.data[0].temperatureMin);
+            const maxTemperature = Math.round(body.daily.data[0].temperatureMax);
             const precipProbability = body.currently.precipProbability;
 
-            callback(undefined, `${dailySummary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`);
+            callback(undefined, `${dailySummary} The minimum temperature is ${minTemperature} ‎°C and the maximum is ${maxTemperature} ‎°C. It is currently ${temperature} ‎°C. There is a ${precipProbability}% chance of rain.`);
         }
     });
 }
