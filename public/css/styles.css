@@ -13,6 +13,7 @@ Helper classes
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .center--horizontal {
@@ -32,6 +33,10 @@ Helper classes
 /* ========================================
 Styles
 =========================================*/
+
+.container {
+    height: 100%;
+}
 
 #page-title {
     padding: 2rem;
@@ -62,11 +67,8 @@ Styles
     text-decoration: underline;
 }
 
-.about__me__image__container {
-    height: 100%;
-}
-
-.about__me__image__container img {
+.about__me--image {
+    margin-top: 2rem;
     width: 45rem;
 }
 
@@ -74,7 +76,6 @@ Styles
 
 #search_form_wrap {
     height: 100%;
-    flex-direction: column;
 }
 
 #search_form {
@@ -103,7 +104,7 @@ Styles
 }
 
 #messages_wrap {
-    margin-top: 1.4rem;
+    margin-top: 1.5rem;
     width: 60%;
 }
 
