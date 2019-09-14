@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (e) => {
     searchLoader.classList.remove('hide');
     messagesWrap.classList.add('hide');
 
-    fetch(`http://localhost:3000/weather?address=${location}`).then((res) => {
+    fetch(`/weather?address=${location}`).then((res) => {
         res.json().then((data) => {
             searchLoader.classList.add('hide');
             messagesWrap.classList.remove('hide');
